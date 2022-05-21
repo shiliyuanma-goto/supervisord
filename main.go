@@ -99,7 +99,15 @@ func loadEnvFile() {
 // 5. ../etc/supervisord.conf (Relative to the executable)
 // 6. ../supervisord.conf (Relative to the executable)
 func findSupervisordConf() (string, error) {
-	possibleSupervisordConf := []string{options.Configuration,
+	possibleSupervisordConf := []string{
+		options.Configuration,
+		os.ExpandEnv("$FORT_HOME/etc/supd/supd.ini"),
+
+		"./supd.ini",
+		"./etc/supd/supd.ini",
+		"../etc/supd/supd.ini",
+		"/etc/supd/supd.ini",
+
 		"./supervisord.conf",
 		"./etc/supervisord.conf",
 		"/etc/supervisord.conf",

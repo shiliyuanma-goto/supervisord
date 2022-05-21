@@ -3,6 +3,7 @@ module github.com/ochinchina/supervisord
 go 1.16
 
 require (
+	github.com/UnnoTed/fileb0x v1.1.4 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/rpc v1.2.0
